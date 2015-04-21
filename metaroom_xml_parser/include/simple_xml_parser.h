@@ -572,7 +572,7 @@ private:
         tf::StampedTransform transform;
         geometry_msgs::TransformStamped tfmsg;
         sensor_msgs::CameraInfo camInfo;
-        bool camInfoError = false;
+        //bool camInfoError = false;
 
         if (xmlReader->name()!="IntermediatePosition")
         {
@@ -582,7 +582,7 @@ private:
         QXmlStreamAttributes attributes = xmlReader->attributes();
 
         // read in number of depth and rgb images
-        int numRGB, numDepth;
+        int numRGB = 0, numDepth = 0;
         if (attributes.hasAttribute("RGB_Images"))
         {
             numRGB = attributes.value("RGB_Images").toString().toInt();
